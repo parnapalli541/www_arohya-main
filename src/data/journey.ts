@@ -3,22 +3,22 @@ import type { JourneyStep } from '@/types';
 export const journey: JourneyStep[] = [
   {
     num: '01',
-    title: 'Share Requirements',
-    desc: 'Tell us what you need and share a few basic details. Our Tumkur team will understand your goals.',
+    title: 'Share Requirement',
+    desc: 'Fill our quick form, WhatsApp us, or visit our B.H. Road office in Tumkur to discuss your exact funding need.',
   },
   {
     num: '02',
-    title: 'Compare Your Offers',
-    desc: 'We compare rates, eligibility, and terms across our lending partners so you can choose confidently.',
+    title: 'Compare 28+ Banks',
+    desc: 'We analyze interest rates, processing fees, CIBIL suitability, and tenure across SBI, Canara, HDFC, and more.',
   },
   {
     num: '03',
-    title: 'Apply with Confidence',
-    desc: 'Get guided help with your documents and application at every step of the process.',
+    title: 'Doorstep Paperwork',
+    desc: 'Our Tumkur executives guide your KYC, ITR, property title deeds, or business papers to eliminate bank rejection risks.',
   },
   {
     num: '04',
-    title: 'Approval & Disbursal',
-    desc: 'We coordinate with the lender and keep you updated through approval and disbursal.',
+    title: 'Sanction & Disbursal',
+    desc: 'The partner bank approves your loan file, and funds are credited directly to your bank account with complete peace of mind.',
   },
 ];

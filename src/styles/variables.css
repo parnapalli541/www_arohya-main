@@ -4,12 +4,12 @@
   --color-primary: #245b9b;
   --color-primary-soft: rgb(36 91 155 / 0.1);
   --color-gold: #f2683a;
-  --color-navy: #102b49;
+  --color-navy: #06192b;
   --color-on-primary: #ffffff;
-  --color-bg: #ffffff;
-  --color-surface: #f2f5fd;
-  --color-text: #1e293b;
-  --color-text-muted: #475569;
+  --color-bg: #f8f9fd;
+  --color-surface: #eef2ff;
+  --color-text: #172536;
+  --color-text-muted: #5e6877;
 
   /* Typography */
   --font-sans: 'Public Sans', sans-serif;

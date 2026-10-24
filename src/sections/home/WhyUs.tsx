@@ -1,116 +1,57 @@
 import { whyItems } from '@/data/whyItems';
-import { GOLD, NAVY } from '@/constants/theme';
 
 export function WhyUs() {
   return (
-    <section
-      id="why"
-      style={{
-        background: '#EEF3FC',
-        padding: '96px 32px',
-        color: NAVY,
-      }}
-    >
-      <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-        <div
-          className="why-layout"
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '0.9fr 1.1fr',
-            gap: 64,
-            alignItems: 'start',
-          }}
-        >
-          <div>
-            <div
-              style={{
-                color: GOLD,
-                fontSize: 12,
-                fontWeight: 700,
-                letterSpacing: 2.5,
-                marginBottom: 14,
-              }}
-            >
-              WHY AROHYA CAPITAL
-            </div>
-            <h2
-              style={{
-                fontFamily: "'Source Serif 4', serif",
-                fontSize: 38,
-                fontWeight: 600,
-                margin: '0 0 18px',
-              }}
-            >
-              Built on transparency. Chosen for trust.
-            </h2>
-            <p
-              style={{
-                fontSize: 16,
-                lineHeight: 1.7,
-                color: '#5d6e82',
-                margin: '0 0 30px',
-              }}
-            >
-              We work with multiple banking partners to match you with the right product — not the
-              easiest one to sell. Every recommendation is explained, every charge disclosed.
-            </p>
-            <a
-              href="#contact"
-              className="why-cta"
-              style={{
-                display: 'inline-block',
-                border: `1px solid ${GOLD}`,
-                color: GOLD,
-                fontWeight: 600,
-                fontSize: 14,
-                padding: '13px 26px',
-                borderRadius: 999,
-              }}
-            >
-              Book a free consultation
-            </a>
-          </div>
-          <div className="why-cards" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18 }}>
-            {whyItems.map((w) => (
-              <div
-                key={w.title}
-                className="why-card"
-                style={{
-                  background: '#fff',
-                  border: '1px solid #e1e8f2',
-                  borderRadius: 16,
-                  padding: 22,
-                }}
-              >
-                <div
-                  style={{
-                    fontSize: 15,
-                    fontWeight: 700,
-                    color: NAVY,
-                    marginBottom: 7,
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 10,
-                  }}
-                >
-                  <span
-                    style={{
-                      width: 7,
-                      height: 7,
-                      borderRadius: '50%',
-                      background: GOLD,
-                      flexShrink: 0,
-                    }}
-                  />
-                  {w.title}
-                </div>
-                <div style={{ fontSize: 13, lineHeight: 1.6, color: '#64748b' }}>
-                  {w.desc}
-                </div>
-              </div>
-            ))}
-          </div>
+    <section id="why" className="why-section">
+      <div className="why-layout">
+        <div className="why-copy">
+          <div className="section-eyebrow">LOCAL TRUST &amp; INTEGRITY</div>
+          <h2>Why Borrowers in Tumkur Choose Arohya</h2>
+          <p>
+            When borrowing money, you deserve someone on your side. We operate as a transparent
+            direct selling agents (DSAs) with authorized bank empanelment, removing all middlemen
+            deception.
+          </p>
+          <ul className="why-promises">
+            <li>
+              <strong>Empanelled with Top Regulated Lenders</strong>
+              <span>We partner strictly with RBI-authorized scheduled commercial banks and reputed NBFCs.</span>
+            </li>
+            <li>
+              <strong>Transparent Facilitator Role</strong>
+              <span>You never sign blank forms. All official sanction letters and interest commitments come directly from the lender&apos;s letterhead.</span>
+            </li>
+          </ul>
         </div>
+        <div className="why-cards">
+          {whyItems.map((item, index) => (
+            <article className="why-card" key={item.title}>
+              <span className="why-icon" aria-hidden="true">
+                {['↝', '▦', '⌁', '♙'][index]}
+              </span>
+              <h3>{item.title}</h3>
+              <p>{item.desc}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+      <div className="partner-banks">
+        <div className="partner-heading">
+          <span>EMPANELLED DIRECT SELLING AGENT (DSA) FOR OFFICIAL LOAN PROGRAMS</span>
+          <h2>Facilitating Loans Through Leading Indian Institutions</h2>
+        </div>
+        <div className="partner-list">
+          <div className="partner-bank"><span className="partner-mark mark-sbi">◉</span><span><strong>State Bank of India</strong><small>Nationalized Partner</small></span></div>
+          <div className="partner-bank"><span className="partner-mark mark-canara">△</span><span><strong>Canara Bank</strong><small>Karnataka Lead Bank</small></span></div>
+          <div className="partner-bank"><span className="partner-mark mark-karnataka">◉</span><span><strong>Karnataka Bank</strong><small>Regional Specialist</small></span></div>
+          <div className="partner-bank"><span className="partner-mark mark-bob">B</span><span><strong>Bank of Baroda</strong><small>Retail &amp; MSME Loans</small></span></div>
+          <div className="partner-bank"><span className="partner-mark mark-hdfc">▦</span><span><strong>HDFC Bank</strong><small>Private Sector Bank</small></span></div>
+        </div>
+        <p className="partner-note">
+          *Note: Arohya Capital is an authorized DSA/Referral Partner. Loan approval, interest
+          rates, and loan disbursal are at the sole discretion of the respective banks/NBFCs in
+          compliance with RBI directives.
+        </p>
       </div>
     </section>
   );

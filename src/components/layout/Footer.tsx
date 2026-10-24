@@ -1,161 +1,112 @@
-import { GOLD, NAVY } from '@/constants/theme';
-
-const FOOTER_LINK_STYLE = { color: 'rgba(255,255,255,0.6)' };
-
 export function Footer() {
   return (
-    <footer
-      id="contact"
-      style={{ background: NAVY, color: 'rgba(255,255,255,0.6)', padding: '64px 32px 40px' }}
-    >
-      <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-        <div
-          className="footer-grid"
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '1.4fr 1fr 1fr 1fr',
-            gap: 48,
-            paddingBottom: 44,
-            borderBottom: '1px solid rgba(255,255,255,0.08)',
-          }}
-        >
-          <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
-              <span
-                style={{
-                  width: 34,
-                  height: 34,
-                  borderRadius: 9,
-                  background: `linear-gradient(135deg, ${GOLD}, #dc5125)`,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: NAVY,
-                  fontWeight: 700,
-                  fontSize: 15,
-                }}
-              >
-                A
-              </span>
-              <span
-                style={{
-                  fontFamily: "'Source Serif 4', serif",
-                  fontSize: 17,
-                  fontWeight: 600,
-                  letterSpacing: 1.5,
-                  color: '#fff',
-                }}
-              >
-                AROHYA CAPITAL
-              </span>
-            </div>
-            <p style={{ fontSize: 13, lineHeight: 1.7, margin: 0, maxWidth: 300 }}>
-              Your Tumkur loan advisory partner. Compare offers from 25+ partner banks and NBFCs
-              with local guidance through documentation and disbursal.
+    <footer id="contact" className="site-footer">
+      <section className="contact-cta">
+        <div className="contact-cta-inner">
+          <div className="contact-copy">
+            <span className="contact-badge">LOCAL WALK-IN ADVISORY</span>
+            <h2>Visit Our Tumkur Office or Speak with a Loan Specialist Today</h2>
+            <p>
+              Prefer sitting face-to-face with a senior financial advisor over hot coffee? We
+              welcome you at our Ashok Nagar office on B.H. Road.
             </p>
+            <div className="contact-details">
+              <div>
+                <span aria-hidden="true">⌖</span>
+                <p>
+                  <strong>Tumkur Main Office</strong>
+                  <span>B.H. Road, Ashok Nagar, Tumkur - 572102</span>
+                  <span>(Near Ashoka Theatre Circle)</span>
+                </p>
+              </div>
+              <div>
+                <span aria-hidden="true">◷</span>
+                <p>
+                  <strong>Working Hours</strong>
+                  <span>Monday to Saturday: 9:30 AM – 7:00 PM</span>
+                  <span>Sunday: By Prior Appointment</span>
+                </p>
+              </div>
+            </div>
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 10, fontSize: 13 }}>
-            <span
-              style={{
-                color: '#fff',
-                fontWeight: 700,
-                fontSize: 13,
-                letterSpacing: 1,
-                marginBottom: 4,
-              }}
-            >
-              SERVICES
-            </span>
-            <a href="#services" className="footer-link" style={FOOTER_LINK_STYLE}>
-              Loan Services
-            </a>
-            <a href="#services" className="footer-link" style={FOOTER_LINK_STYLE}>
-              Business Finance
-            </a>
-            <a href="#services" className="footer-link" style={FOOTER_LINK_STYLE}>
-              Agriculture Finance
-            </a>
-            <a href="#services" className="footer-link" style={FOOTER_LINK_STYLE}>
-              Insurance
-            </a>
-            <a href="#services" className="footer-link" style={FOOTER_LINK_STYLE}>
-              Investments
-            </a>
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 10, fontSize: 13 }}>
-            <span
-              style={{
-                color: '#fff',
-                fontWeight: 700,
-                fontSize: 13,
-                letterSpacing: 1,
-                marginBottom: 4,
-              }}
-            >
-              COMPANY
-            </span>
-            <a href="#top" className="footer-link" style={FOOTER_LINK_STYLE}>
-              About Us
-            </a>
-            <a href="#calculator" className="footer-link" style={FOOTER_LINK_STYLE}>
-              Calculators
-            </a>
-            <a href="#faq" className="footer-link" style={FOOTER_LINK_STYLE}>
-              FAQ
-            </a>
-            <a href="#apply" className="footer-link" style={FOOTER_LINK_STYLE}>
-              Careers
-            </a>
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 10, fontSize: 13 }}>
-            <span
-              style={{
-                color: '#fff',
-                fontWeight: 700,
-                fontSize: 13,
-                letterSpacing: 1,
-                marginBottom: 4,
-              }}
-            >
-              CONTACT
-            </span>
-            <a href="tel:+918162200000" className="footer-link" style={FOOTER_LINK_STYLE}>
-              +91 816 220 0000
+          <aside className="contact-card">
+            <h3>Direct Helpdesk Contacts</h3>
+            <p>Kannada and English speaking loan counselors are ready to help you.</p>
+            <a href="tel:+918162200000" className="contact-method phone-method">
+              <span aria-hidden="true">☎</span>
+              <span>
+                <small>Telephone Helpline</small>
+                <strong>+91 816 220 0000</strong>
+              </span>
+              <span aria-hidden="true">→</span>
             </a>
             <a
               href="https://wa.me/918162200000"
-              className="footer-link"
-              style={FOOTER_LINK_STYLE}
+              className="contact-method whatsapp-method"
+              target="_blank"
+              rel="noreferrer"
             >
-              Chat on WhatsApp
+              <span aria-hidden="true">▣</span>
+              <span>
+                <small>WhatsApp Assistance</small>
+                <strong>+91 816 220 0000</strong>
+              </span>
+              <span aria-hidden="true">→</span>
             </a>
-            <a
-              href="mailto:contact@arohyacapital.in"
-              className="footer-link"
-              style={FOOTER_LINK_STYLE}
-            >
-              contact@arohyacapital.in
+            <a href="#apply" className="callback-link">
+              Or fill the online form for a priority callback →
             </a>
-            <span>B.H. Road, Ashok Nagar, Tumkur</span>
-          </div>
+          </aside>
         </div>
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            gap: 20,
-            paddingTop: 26,
-            fontSize: 12,
-            flexWrap: 'wrap',
-          }}
-        >
-          <span>© 2026 AROHYA CAPITAL. All rights reserved.</span>
-          <span style={{ maxWidth: 560, textAlign: 'right', lineHeight: 1.6 }}>
-            AROHYA CAPITAL is a financial services consultancy. Loan approval, interest rates, and
-            investment returns are subject to lender and market conditions — no approvals or returns
-            are guaranteed.
-          </span>
+      </section>
+      <div className="footer-main">
+        <div className="footer-inner">
+          <div className="footer-brand-row">
+            <div>
+              <a href="#top" className="footer-brand">Arohya Capital</a>
+              <p>Empanelled Loan Facilitator &amp; Direct Selling Agent · Tumkur, Karnataka</p>
+            </div>
+            <div className="footer-badges">
+              <a href="tel:+918162200000">☎ +91 816 220 0000</a>
+              <span>Tumkur - 572102</span>
+            </div>
+          </div>
+          <div className="footer-info-grid">
+            <div>
+              <h3>Regional Office</h3>
+              <p>B.H. Road, Ashok Nagar, Tumkur - 572102</p>
+              <p>Kannada Helpline: +91 816 220 0000</p>
+              <a href="mailto:support@arohyacapital.com">Email: support@arohyacapital.com</a>
+            </div>
+            <div>
+              <h3>Regulatory &amp; Legal</h3>
+              <a href="#why">Partner Banks &amp; NBFCs</a>
+              <a href="#contact">Grievance Redressal</a>
+              <a href="#contact">Fair Practices Code</a>
+              <a href="#contact">Privacy Policy</a>
+            </div>
+            <div>
+              <h3>Taluk Coverage</h3>
+              <p>
+                Active doorstep advisory in Tumkur, Gubbi, Tiptur, Sira, Kunigal, Madhugiri,
+                Koratagere, Tumkur, Pavagada, and Chikkanayakanahalli.
+              </p>
+            </div>
+          </div>
+          <div className="footer-legal">
+            <p>
+              © 2024 Arohya Capital. All Rights Reserved. Arohya Capital operates strictly as an
+              authorized Direct Selling Agent (DSA) and loan facilitator partnered with RBI-regulated
+              Banks and NBFCs. We do not directly disburse loans or hold borrower liability. Serving
+              Tumkur, Karnataka.
+            </p>
+            <p>
+              Disclaimer: Loan sanctioning, interest rates, tenure, and disbursals are at the sole
+              discretion of partner banks based on their underwriting parameters and applicant
+              eligibility. Arohya Capital does not demand any cash fee or advance payments from
+              customers.
+            </p>
+          </div>
         </div>
       </div>
     </footer>
