@@ -1,19 +1,19 @@
 import { journey } from '@/data/journey';
+import { useTranslation } from 'react-i18next';
 
 export function Journey() {
+  const { t } = useTranslation();
+
   return (
     <section id="journey" className="loan-journey">
       <div className="journey-inner">
         <div className="journey-heading">
-          <div className="section-eyebrow">CLEAR &amp; TRANSPARENT JOURNEY</div>
-          <h2>How Arohya Capital Simplifies Your Loan</h2>
-          <p>
-            No endless queues. No confusing banking jargon. We bridge the gap between you and the
-            right lending institution.
-          </p>
+          <div className="section-eyebrow">{t('journey.eyebrow')}</div>
+          <h2>{t('journey.title')}</h2>
+          <p>{t('journey.description')}</p>
         </div>
         <div className="journey-grid">
-          {journey.map((step) => (
+          {journey.map((step, index) => (
             <article className="journey-card" key={step.num}>
               <div className="journey-card-top">
                 <span className={`journey-number${step.num === '04' ? ' is-final' : ''}`}>
@@ -23,27 +23,20 @@ export function Journey() {
                   {['♧', '⌁', '⚙', '✓'][Number(step.num) - 1]}
                 </span>
               </div>
-              <h3>{step.title}</h3>
-              <p>{step.desc}</p>
-              <span className="journey-step-label">
-                Step {Number(step.num)}: {step.num === '01'
-                  ? '5 Min Initial Intake'
-                  : step.num === '02'
-                    ? 'Best Rate Matching'
-                    : step.num === '03'
-                      ? 'Verification & Filing'
-                      : 'Direct Bank Credit'}
-              </span>
+              <h3>{t(`journey.steps.${index}.title`)}</h3>
+              <p>{t(`journey.steps.${index}.description`)}</p>
+              <span className="journey-step-label">{t(`journey.steps.${index}.label`)}</span>
             </article>
           ))}
         </div>
         <div className="visit-strip">
-          <span className="visit-icon" aria-hidden="true">♧</span>
+          <span className="visit-icon" aria-hidden="true">
+            ♧
+          </span>
           <p>
-            <strong>Need personal guidance in your taluk?</strong> Our mobile field coordinators
-            visit Gubbi, Sira, Tiptur, Kunigal, and surrounding areas.
+            <strong>{t('journey.visitTitle')}</strong> {t('journey.visitDescription')}
           </p>
-          <a href="#contact">Request Home / Office Visit</a>
+          <a href="#contact">{t('journey.visitAction')}</a>
         </div>
       </div>
     </section>

@@ -7,10 +7,10 @@ export const SITE = {
 } as const;
 
 export const NAV_LINKS: NavLink[] = [
-  { href: '#top', label: 'Home' },
-  { href: '#services', label: 'Loans' },
-  { href: '#journey', label: 'How It Works' },
-  { href: '#calculator', label: 'EMI Calculator' },
-  { href: '#why', label: 'About' },
-  { href: '#apply', label: 'Contact' },
+  { href: '#top', labelKey: 'navigation.home' },
+  { href: '#services', labelKey: 'navigation.loans' },
+  { href: '#journey', labelKey: 'navigation.howItWorks' },
+  { href: '#calculator', labelKey: 'navigation.emiCalculator' },
+  { href: '#why', labelKey: 'navigation.about' },
+  { href: '#apply', labelKey: 'navigation.contact' },
 ];
