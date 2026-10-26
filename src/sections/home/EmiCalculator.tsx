@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { calculateEmi, fmtINR } from '@/lib/format';
 
 export function EmiCalculator() {
+  const { t } = useTranslation();
   const [amount, setAmount] = useState(2500000);
   const [rate, setRate] = useState(8.5);
   const [tenure, setTenure] = useState(15);
@@ -11,22 +13,19 @@ export function EmiCalculator() {
     <section id="calculator" className="emi-section">
       <div className="emi-inner">
         <div className="emi-heading">
-          <div className="section-eyebrow">TRANSPARENT PLANNING TOOL</div>
-          <h2>Interactive Loan EMI Calculator</h2>
-          <p>
-            Calculate your monthly repayment estimate instantly. Adjust loan amount, interest rate,
-            and tenure below.
-          </p>
+          <div className="section-eyebrow">{t('emi.eyebrow')}</div>
+          <h2>{t('emi.title')}</h2>
+          <p>{t('emi.description')}</p>
         </div>
         <div className="emi-panel">
           <div className="emi-controls">
             <label className="emi-control">
               <span className="emi-control-heading">
-                <strong>Loan Amount</strong>
+                <strong>{t('emi.loanAmount')}</strong>
                 <b>{fmtINR(amount)}</b>
               </span>
               <input
-                aria-label="Loan amount"
+                aria-label={t('emi.loanAmount')}
                 type="range"
                 min={100000}
                 max={10000000}
@@ -34,15 +33,19 @@ export function EmiCalculator() {
                 value={amount}
                 onChange={(event) => setAmount(Number(event.target.value))}
               />
-              <span className="emi-range-labels"><span>₹1 Lakh</span><span>₹50 Lakhs</span><span>₹1 Crore</span></span>
+              <span className="emi-range-labels">
+                <span>{t('emi.ranges.oneLakh')}</span>
+                <span>{t('emi.ranges.fiftyLakhs')}</span>
+                <span>{t('emi.ranges.oneCrore')}</span>
+              </span>
             </label>
             <label className="emi-control">
               <span className="emi-control-heading">
-                <strong>Interest Rate (p.a.)</strong>
+                <strong>{t('emi.interestRate')}</strong>
                 <b>{rate}%</b>
               </span>
               <input
-                aria-label="Interest rate"
+                aria-label={t('emi.interestRate')}
                 type="range"
                 min={7}
                 max={16}
@@ -50,15 +53,19 @@ export function EmiCalculator() {
                 value={rate}
                 onChange={(event) => setRate(Number(event.target.value))}
               />
-              <span className="emi-range-labels"><span>7.0%</span><span>11.5%</span><span>16.0%</span></span>
+              <span className="emi-range-labels">
+                <span>7.0%</span>
+                <span>11.5%</span>
+                <span>16.0%</span>
+              </span>
             </label>
             <label className="emi-control">
               <span className="emi-control-heading">
-                <strong>Loan Tenure</strong>
-                <b>{tenure} {tenure === 1 ? 'Year' : 'Years'}</b>
+                <strong>{t('emi.tenure')}</strong>
+                <b>{t('emi.years', { count: tenure })}</b>
               </span>
               <input
-                aria-label="Loan tenure"
+                aria-label={t('emi.tenure')}
                 type="range"
                 min={1}
                 max={30}
@@ -66,36 +73,62 @@ export function EmiCalculator() {
                 value={tenure}
                 onChange={(event) => setTenure(Number(event.target.value))}
               />
-              <span className="emi-range-labels"><span>1 Year</span><span>15 Years</span><span>30 Years</span></span>
+              <span className="emi-range-labels">
+                <span>{t('emi.years', { count: 1 })}</span>
+                <span>{t('emi.years', { count: 15 })}</span>
+                <span>{t('emi.years', { count: 30 })}</span>
+              </span>
             </label>
             <p className="emi-note">
               <span aria-hidden="true">ⓘ</span>
-              This calculator provides standard Equated Monthly Installment estimates using
-              amortization logic. Actual bank offers may vary based on credit assessment and
-              processing charges.
+              {t('emi.note')}
             </p>
           </div>
           <aside className="emi-results">
-            <span className="emi-results-title">YOUR ESTIMATED REPAYMENT</span>
+            <span className="emi-results-title">{t('emi.resultsTitle')}</span>
             <div className="emi-monthly">
-              <span>Monthly EMI</span>
+              <span>{t('emi.monthly')}</span>
               <strong>{fmtINR(emi)}</strong>
             </div>
             <dl className="emi-breakdown">
-              <div><dt>Principal Amount:</dt><dd>{fmtINR(amount)}</dd></div>
-              <div><dt>Total Interest Payable:</dt><dd>{fmtINR(interest)}</dd></div>
-              <div className="emi-total"><dt>Total Repayment Amount:</dt><dd>{fmtINR(total)}</dd></div>
+              <div>
+                <dt>{t('emi.principalAmount')}</dt>
+                <dd>{fmtINR(amount)}</dd>
+              </div>
+              <div>
+                <dt>{t('emi.totalInterest')}</dt>
+                <dd>{fmtINR(interest)}</dd>
+              </div>
+              <div className="emi-total">
+                <dt>{t('emi.totalRepayment')}</dt>
+                <dd>{fmtINR(total)}</dd>
+              </div>
             </dl>
             <div className="emi-ratio">
-              <span>Principal vs Interest Ratio</span>
-              <div className="emi-ratio-bar" aria-label={`${principalPercent}% principal, ${100 - principalPercent}% interest`}>
+              <span>{t('emi.ratio')}</span>
+              <div
+                className="emi-ratio-bar"
+                aria-label={t('emi.ratioAria', {
+                  principal: principalPercent,
+                  interest: 100 - principalPercent,
+                })}
+              >
                 <span style={{ width: `${principalPercent}%` }} />
               </div>
               <div className="emi-legend">
-                <span><i />Principal</span><span><i />Interest</span>
+                <span>
+                  <i />
+                  {t('emi.principal')}
+                </span>
+                <span>
+                  <i />
+                  {t('emi.interest')}
+                </span>
               </div>
             </div>
-            <a href="#apply" className="emi-apply">Get Pre-Approved for this EMI →</a>
+            <a href="#apply" className="emi-apply">
+              {t('emi.apply')} →
+            </a>
           </aside>
         </div>
       </div>
